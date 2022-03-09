@@ -1,5 +1,7 @@
 # Untitled: Lifestyle Website
+This is a repo that will house all the content (for now at least) relating to my currently `Untitled Lifestyle Website`. It houses my custom `recipe-schema` that I will be using to validate my recipes (and other) schemas that I will be using to fill my website with content.
 
+## Packages
 Contained herein is everything to do with my [currently unnamed] lifestyle website.
 
 Packages include

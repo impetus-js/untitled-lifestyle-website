@@ -1,4 +1,5 @@
 {
+  "description": "TODO: FIgure out what is or isn't important.",
   "type": "object",
   "properties": {
     "version": {
@@ -10,7 +11,11 @@
       "$ref": "#/definitions/DocumentType"
     },
     "about": {
-      "$ref": "#/definitions/about"
+      "$ref": "#/definitions/about",
+      "description": "TODO: unit + separators"
+    },
+    "meta": {
+      "$ref": "#/definitions/meta"
     },
     "ingredients": {
       "type": "array",
@@ -43,10 +48,6 @@
     "partials": {
       "type": "array",
       "items": {}
-    },
-    "meta": {
-      "type": "array",
-      "items": {}
     }
   },
   "required": [
@@ -77,39 +78,80 @@
       "type": "string"
     },
     "about": {
+      "description": "Describing the metadata. Useful for websites, descriptions etc.",
       "type": "object",
       "properties": {
         "name": {
           "description": "The name of the recipe. On a website this would be the title, for instance.",
           "type": "string"
         },
+        "author": {
+          "$ref": "#/definitions/person",
+          "description": "The author of the recipe schema."
+        },
+        "originalAuthor": {
+          "$ref": "#/definitions/person",
+          "description": "The original author of the recipe."
+        },
         "alternates": {
           "description": "Other names that this recipe is ALSO known by.",
           "type": "array",
           "items": {
-            "type": "string"
+            "anyOf": [
+              {
+                "$ref": "#/definitions/link"
+              },
+              {
+                "type": "string"
+              }
+            ]
           }
         },
         "headnotes": {
           "$ref": "#/definitions/description",
           "description": "A synopsis of the recipe → https://t.ly/Otsc"
         },
+        "notes": {
+          "$ref": "#/definitions/description",
+          "description": "A notes and suggestions that typically appear at the end of a recipe."
+        },
+        "created": {
+          "description": "The created date of the recipe in schema format.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "published": {
+          "description": "The original publish date of this recipe.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "separator": {
+          "$ref": "#/definitions/radix",
+          "description": "Used to determine which radix symbol to use."
+        },
+        "units": {
+          "description": "Allowed unit types ie metic, imperial, whatever else. Used for conversions."
+        },
         "images": {
           "type": "object",
           "properties": {
             "hero": {
-              "description": "The main/hero image for this resource. Extra sizes are not acceptable here",
-              "type": "string"
+              "$ref": "#/definitions/image",
+              "description": "The main/hero image for this resource. Extra sizes are not acceptable here"
             },
             "gallery": {
               "description": "A list of -> #/definitions/image",
               "type": "array",
-              "items": {}
+              "items": {
+                "$ref": "#/definitions/image"
+              }
             },
             "all": {
               "description": "A calculated value of all images from each aspect (include about.images* and partials)",
               "type": "array",
-              "items": {}
+              "items": {
+                "$ref": "#/definitions/image"
+              }
             }
           },
           "required": [
@@ -117,13 +159,151 @@
             "gallery",
             "hero"
           ]
+        },
+        "totalCost": {
+          "description": "A calculated property of all the costs into one.",
+          "type": "object",
+          "properties": {
+            "everything": {
+              "$ref": "#/definitions/cost"
+            },
+            "per": {
+              "description": "Calc all within partials separately.",
+              "type": "object",
+              "properties": {
+                "component": {
+                  "$ref": "#/definitions/cost"
+                },
+                "variants": {
+                  "$ref": "#/definitions/cost"
+                }
+              },
+              "required": [
+                "component",
+                "variants"
+              ]
+            }
+          },
+          "required": [
+            "everything"
+          ]
+        },
+        "links": {
+          "description": "An array of useful links that are related to this recipe that AREN'T a variation.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/link"
+          }
         }
       },
       "required": [
         "alternates",
+        "author",
+        "created",
         "headnotes",
         "images",
-        "name"
+        "links",
+        "name",
+        "notes",
+        "originalAuthor",
+        "published",
+        "separator",
+        "totalCost",
+        "units"
+      ]
+    },
+    "person": {
+      "description": "A noteable person for this recipe. Typically an author.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The person's full name",
+          "type": "string"
+        },
+        "url": {
+          "description": "Output URL",
+          "type": "string"
+        },
+        "headshot": {
+          "description": "A url to a headshot image",
+          "type": "string"
+        },
+        "colleagues": {
+          "description": "Any notable colleagues",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/person"
+          }
+        },
+        "contact": {
+          "description": "Person's contact info",
+          "type": "object",
+          "properties": {
+            "telephone": {
+              "description": "Telephone. No format\n\nTODO: Use @pattern here",
+              "type": "string"
+            },
+            "email": {
+              "description": "Person's email\n\nTODO: Use @pattern here",
+              "type": "string"
+            }
+          }
+        },
+        "resturant": {
+          "description": "Last known resturant they were employed/owned.",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "Name of the resturant",
+              "type": "string"
+            },
+            "title": {
+              "description": "The person'a title at the resutrant (Owner, Head Chef, Wait Staff et al)",
+              "type": "string"
+            },
+            "address": {
+              "description": "The address",
+              "type": "string"
+            },
+            "owner": {
+              "description": "The owner's name if not this person.",
+              "type": "string"
+            },
+            "url": {
+              "description": "The establishment's website.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "address",
+            "name",
+            "owner",
+            "title"
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "resturant"
+      ]
+    },
+    "link": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "desc": {
+          "$ref": "#/definitions/description"
+        }
+      },
+      "required": [
+        "desc",
+        "text",
+        "url"
       ]
     },
     "description": {
@@ -172,6 +352,132 @@
         "rich"
       ],
       "type": "string"
+    },
+    "radix": {
+      "description": "Different types of radix' available based on location.",
+      "enum": [
+        "canadian",
+        "danish",
+        "finnish",
+        "french",
+        "gb-english",
+        "german",
+        "italian",
+        "norwegian",
+        "spanish",
+        "swedish",
+        "thai",
+        "us-english"
+      ],
+      "type": "string"
+    },
+    "image": {
+      "description": "An image",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The name of the image. Used for captions, alt, aria.",
+          "type": "string"
+        },
+        "description": {
+          "$ref": "#/definitions/description",
+          "description": "A description of the image. Used for captions, alt, aria."
+        },
+        "published": {
+          "description": "A publish date"
+        },
+        "url": {
+          "description": "A url to the FULL SIZED IMAGE",
+          "type": "string"
+        },
+        "location": {
+          "description": "Address, basically text",
+          "type": "string"
+        },
+        "author": {
+          "$ref": "#/definitions/person",
+          "description": "Author name"
+        },
+        "sizes": {
+          "$ref": "#/definitions/imageSizes",
+          "description": "If required, an array of image sizes can be supplied. These tell the consuming app\nwhich sizes exist for the app to use. If this is excluded it is expected that the\nmain image is between XL && XXL size and the consuming app will create the\nderivative images."
+        }
+      },
+      "required": [
+        "author",
+        "description",
+        "location",
+        "name",
+        "published",
+        "sizes",
+        "url"
+      ]
+    },
+    "imageSizes": {
+      "description": "An enum of sizes that the schema supports",
+      "enum": [
+        "l",
+        "medium",
+        "s",
+        "xl",
+        "xs"
+      ],
+      "type": "string"
+    },
+    "cost": {
+      "description": "The cost of this particular item.",
+      "type": "object",
+      "properties": {
+        "value": {
+          "description": "The numerical value",
+          "type": "number"
+        },
+        "currency": {
+          "description": "The currency type to know how to render.",
+          "type": "number"
+        }
+      },
+      "required": [
+        "currency",
+        "value"
+      ]
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "taxonomies": {
+          "$ref": "#/definitions/taxonomies"
+        }
+      },
+      "required": [
+        "taxonomies"
+      ]
+    },
+    "taxonomies": {
+      "description": "Not required for recipes but rather the consumer of the recipe. Useful for organization.",
+      "type": "object",
+      "properties": {
+        "tags": {
+          "description": "An array of tags. Right now string, future they will be links.",
+          "maxItems": 50,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "categories": {
+          "description": "An array of categories but a limited amount (5 max)",
+          "maxItems": 5,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "categories",
+        "tags"
+      ]
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#"

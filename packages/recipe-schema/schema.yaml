@@ -44,45 +44,45 @@
 ---
 # General schema stuff
 schema: # The schema definition
-version: # The version of the schema used
-type: 
+# version: # The version of the schema used
+# type: 
   $ref: '#/definitions/types/document'
 
 # Describing the metadata. Useful for websites, descriptions etc
 about: 
-  name: # The name of the recipe. On a website this would be the title, for instance.
-  alternate: # Other names that this recipe is ALSO known by.
-    - $ref: '#/definitions/link' # Either a link or text.
-  images: 
-    hero: # The main/hero image for this resource. Extra sizes are not acceptable here.
-      $ref: '#/definitions/image'
-    gallery: # A list of -> #/definitions/image
-      - $ref: '#/definitions/image'
-      - $ref: '#/definitions/image'
-      - $ref: '#/definitions/image'
-    all: # A calculated value of all images from each aspect (include about.images* and partials)
-      - $ref: '#/definitions/image'  
-  headnotes: # A synopsis of the recipe → https://t.ly/Otsc
-    $ref: '#/definitions/description'
-  notes: # A notes and suggestions that typically appear at the end of a recipe.
-    $ref: '#/definitions/description'
-  created: # The created date of the recipe in schema format.
-  published: # The original publish date of this recipe.
-  author: # The author of the recipe schema.
-    $ref: '#/definitions/person'
-  originalAuthor: # The original author of the recipe
-    $ref: '#/definitions/person'
-  units: # enum of allowed unit types ie metic, imperial, whatever else. Used for conversions.
-    $ref: '#/definitions/units'
-  separator: # used to determine which radix symbol to use.
-  totalCost: # A calculated property of all the costs into one.
-    $ref: '#/definitions/cost'
-    per: # Calc all within partials as their own thing.
-      component: 
-        $ref: '#/definitions/cost'
-      variants:
-        $ref: '#/definitions/cost'
-  links: # An array of useful links that are related to this recipe that AREN'T a variation.
+  # name: # The name of the recipe. On a website this would be the title, for instance.
+  # alternates: # Other names that this recipe is ALSO known by.
+  #   - $ref: '#/definitions/link' # Either a link or text.
+  # images: 
+  #   hero: # The main/hero image for this resource. Extra sizes are not acceptable here.
+  #     $ref: '#/definitions/image'
+  #   gallery: # A list of -> #/definitions/image
+  #     - $ref: '#/definitions/image'
+  #     - $ref: '#/definitions/image'
+  #     - $ref: '#/definitions/image'
+  #   all: # A calculated value of all images from each aspect (include about.images* and partials)
+  #     - $ref: '#/definitions/image'  
+  # headnotes: # A synopsis of the recipe → https://t.ly/Otsc
+  #   $ref: '#/definitions/description'
+  # notes: # A notes and suggestions that typically appear at the end of a recipe.
+  #   $ref: '#/definitions/description'
+  # created: # The created date of the recipe in schema format.
+  # published: # The original publish date of this recipe.
+  # author: # The author of the recipe schema.
+  #   $ref: '#/definitions/person'
+  # originalAuthor: # The original author of the recipe
+  #   $ref: '#/definitions/person'
+  # units: # enum of allowed unit types ie metic, imperial, whatever else. Used for conversions.
+  #   $ref: '#/definitions/types/units'
+  # separator: # used to determine which radix symbol to use.
+  # totalCost: # A calculated property of all the costs into one.
+  #   $ref: '#/definitions/cost'
+  #   per: # Calc all within partials as their own thing.
+  #     component: 
+  #       $ref: '#/definitions/cost'
+  #     variants:
+  #       $ref: '#/definitions/cost'
+  # links: # An array of useful links that are related to this recipe that AREN'T a variation.
 
 # These top level items are REQUIRED for it to be a recipe.
 ingredients:
@@ -274,8 +274,8 @@ meta:
     $ref: https://schema.org/recipeCuisine
   reviews: # This is low priority
     $ref: https://schema.org/review
-  taxonomies: 
-    $ref: '#/definitions/taxonomies'
+  # taxonomies: 
+  #   $ref: '#/definitions/taxonomies'
 
 # Any internal definitions
 definitions:
@@ -452,10 +452,10 @@ definitions:
         - item: 
           tutorial:
   
-  # Not required for recipes but rather the consumer of the recipe. Useful for organization.
-  taxonomies:
-    tags: # An array of tags. Right now string, future they will be links.
-    categories: # An array of categories but a limited amount (5 max)
+  # # Not required for recipes but rather the consumer of the recipe. Useful for organization.
+  # taxonomies:
+  #   tags: # An array of tags. Right now string, future they will be links.
+  #   categories: # An array of categories but a limited amount (5 max)
 
   # A variation is a mixin that is used to change minor parts of a recipe but it "creates"
   # a new recipe based on the changes. Variations should be minimal changes not drastic
@@ -481,7 +481,6 @@ definitions:
     potentialAction: #Indicates a potential (ideal) Action
     url: # A store url
     tutorials: # A list of urls to a tutorial
-    sameAs: # A link/text to show what this is the same as (string | SameAs)
     consumables: # Consumables for the tool required
 
   # mise en place

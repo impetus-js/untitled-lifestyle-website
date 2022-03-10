@@ -1,6 +1,11 @@
 import { about } from './root/about'
 import { DocumentType } from './enums/document'
+import { meta } from './meta'
 
+/**
+ * 
+ * TODO: FIgure out what is or isn't important.
+ */
 export interface Recipe {
   /**
    * The version of the recipe schema
@@ -11,7 +16,12 @@ export interface Recipe {
   version: string
 
   type: DocumentType
+
+  /**
+   * TODO: unit + separators
+   */
   about: about
+  meta: meta
   
   ingredients: unknown[]
   instructions: unknown[]
@@ -21,5 +31,4 @@ export interface Recipe {
   serving: unknown[]
   storing: unknown[]
   partials: unknown[]
-  meta: unknown[]
 }

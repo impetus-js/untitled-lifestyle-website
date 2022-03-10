@@ -11,3 +11,7 @@ Packages include
 | `styles`  | The theme n' stuff. CSS |
 | `website`  | The website application built on Next.js (static) |
 | `website-content`  | Separating the content from the site. Is pulled in when site is built |
+
+<!--
+https://nicedoc.io/aldi/awesome-bulma-templates
+-->

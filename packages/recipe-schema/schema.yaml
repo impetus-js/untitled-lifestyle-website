@@ -1,4 +1,5 @@
 ---
+
 # What --------------------
 # At the top level of a recipe is everything required to execute a recipe to perfection.
 # This does not include any secondary metadata like author or images. Those are added as
@@ -289,20 +290,21 @@ definitions:
       - section: # Grouping, contains child steps. 
         $ref: '#/definitions/stepSection'
 
-    alterations:
-      - diff # Show a diff of the two recipes inline.
-      - tooltip # A short note to tell the reader that there is a difference between this recipe and
-                # the original. 
-      - comment # A comment is just a different version of a tooltip so that an author has the power
-                # to show comments and tooltips on a page. Typically this would be a long-form
-                # tooltip
-    document:
-      - recipe # A fully realized recipe
-      - component # A comonent, could contain all the recipe properties or just some
-      - variation # A variation, could contain all the recipe properties or just some
-      - equipment # 
-      - preparation # Preparation methods n' stuff
-      - alteration # An alteration/tooltip etc
+    # alterations:
+    #   - diff # Show a diff of the two recipes inline.
+    #   - tooltip # A short note to tell the reader that there is a difference between this recipe and
+    #             # the original. 
+    #   - comment # A comment is just a different version of a tooltip so that an author has the power
+    #             # to show comments and tooltips on a page. Typically this would be a long-form
+    #             # tooltip
+    
+    # document:
+    #   - recipe # A fully realized recipe
+    #   - component # A comonent, could contain all the recipe properties or just some
+    #   - variation # A variation, could contain all the recipe properties or just some
+    #   - equipment # 
+    #   - preparation # Preparation methods n' stuff
+    #   - alteration # An alteration/tooltip etc
 
     # Get the type, then it's aliases and it's name. This should not live in this schema rather
     # on it's own and is linked to but I am documenting it anyway.
@@ -314,54 +316,53 @@ definitions:
       mass: #same format as volume
       length: #same format as volume
       temperature: #same format as volume
+
+    # @TODO: Finish me.
+    units: # @see: https://en.wikibooks.org/wiki/Cookbook:Units_of_measurement
+      type: # an enum of either weight, cups, scale. 
+        $ref: '#/definitions/types/unit'
+      unit:
+        $ref: '#/definitions/types/unit/volume' # just an example.
     
-    formats: # Format tells you which parser should be used. 
-      - plain # No parser
-      - markdown # Use a markdown parser
-      - html-simple # Only alow certain tags & attributes to be used
-      - html-extended # Full HTML. Use with care.
-      - rich # I can't remember, sorry
-      - csv # comma separated
+    # formats: # Format tells you which parser should be used. 
+    #   - plain # No parser
+    #   - markdown # Use a markdown parser
+    #   - html-simple # Only alow certain tags & attributes to be used
+    #   - html-extended # Full HTML. Use with care.
+    #   - rich # I can't remember, sorry
+    #   - csv # comma separated
 
     # An enum of tool types.
-    tool:
-      - equipment
-      - hand tool
-      - consumable
+    # tool:
+    #   - equipment
+    #   - hand tool
+    #   - consumable
 
-    prep:
-      - station
-      - end-product
-      - action
-      - in-action
-    
+    # prep:
+    #   - station
+    #   - end-product
+    #   - action
+    #   - in-action
 
-  # @TODO: Finish me.
-  units: # @see: https://en.wikibooks.org/wiki/Cookbook:Units_of_measurement
-    type: # an enum of either weight, cups, scale. 
-      $ref: '#/definitions/types/unit'
-    unit:
-      $ref: '#/definitions/types/unit/volume' # just an example.
+  # imageSizes: # An enum of sizes allowed. 
+  #   - xl
+  #   - l
+  #   - medium
+  #   - s
+  #   - xs
 
-  imageSizes: # An enum of sizes allowed. 
-    - xl
-    - l
-    - medium
-    - s
-    - xs
+  # description: 
+  #   format: # Defaults to 'plain text'
+  #     $ref: '#/definitions/types/formats'
+  #   length: # Used on all formats but I think this will only be useful for plain text.
+  #     max: # max character count
+  #     min: # min character count
+  #   external: # An external file/API to pull data. Low priority
 
-  description: 
-    format: # Defaults to 'plain text'
-      $ref: '#/definitions/types/formats'
-    length: # Used on all formats but I think this will only be useful for plain text.
-      max: # max character count
-      min: # min character count
-    external: # An external file/API to pull data. Low priority
-
-  # how much something costs
-  cost: 
-    value: # Numerical value
-    currency: # The currency type to know who to render
+  # # how much something costs
+  # cost: 
+  #   value: # Numerical value
+  #   currency: # The currency type to know who to render
   
   # A recipe step. Describes everything required to execute a recipe from tools, ingredients,
   # description, images and text.
@@ -498,11 +499,11 @@ definitions:
       tools: # An array of tools
         $ref: '#/definitions/tool'
 
-  # A configuration property to govern how components are supposed to be rendered.
-  # This is a render specific flag.
-  componentBehavior: 
-    - merge # Merge makes the recipe one single recipe as if they aren't different recipes.
-    - append # Append components so that each is created on their own. Typically viewed as sections.
+  # # A configuration property to govern how components are supposed to be rendered.
+  # # This is a render specific flag.
+  # componentBehavior: 
+  #   - merge # Merge makes the recipe one single recipe as if they aren't different recipes.
+  #   - append # Append components so that each is created on their own. Typically viewed as sections.
 
   # A component is a recipe partial that adds (not changes) the recipe. This is just a 
   # simple way to create a recpie where there are multiple components that could be shared
@@ -601,39 +602,39 @@ definitions:
            # to explain the chemistry if important.
         $ref: '#/definitions/description'  
 
-  image: 
-    name: # The name of the image. Used for captions, alt, aria.
-    description: # A description of the image. Used for captions, alt, aria.
-      $ref: '#/definitions/description'
-    published: # A publish date
-    url: # A url to the FULL SIZED IMAGE
-    location: # Address, basically text
-    author: # Author name
-      $ref: '#/definitions/person' # Most minimal structure I can get away with.
-    sizes:  # If required, an array of image sizes can be supplied. These tell the consuming app
-            # which sizes exist for the app to use. If this is excluded it is expected that the
-            # main image is between XL && XXL size and the consuming app will create the
-            # derivative images.
-      $ref: '#/definitions/imageSizes'
+  # image: 
+  #   name: # The name of the image. Used for captions, alt, aria.
+  #   description: # A description of the image. Used for captions, alt, aria.
+  #     $ref: '#/definitions/description'
+  #   published: # A publish date
+  #   url: # A url to the FULL SIZED IMAGE
+  #   location: # Address, basically text
+  #   author: # Author name
+  #     $ref: '#/definitions/person' # Most minimal structure I can get away with.
+  #   sizes:  # If required, an array of image sizes can be supplied. These tell the consuming app
+  #           # which sizes exist for the app to use. If this is excluded it is expected that the
+  #           # main image is between XL && XXL size and the consuming app will create the
+  #           # derivative images.
+  #     $ref: '#/definitions/imageSizes'
 
-  link:
-    text: # The text for the link
-    url: # Outbound url
-    desc: # A short plain text summary of this link.
+  # link:
+  #   text: # The text for the link
+  #   url: # Outbound url
+  #   desc: # A short plain text summary of this link.
 
-  # A noteable person for this recipe. Typically an author.
-  person:
-    name: # The person's full name.
-    url: # The person's personal URL
-    headshot: # The person's headshot
-    colleague: # Any notable colleagues
-      - $ref: '#/definitions/person'
-    contact: # Their contact info
-      telephone: # Business telephone
-      email: # Their email
-    resturant: # Last known resturant they were employed/owned.
-      name: # Name of the resturant
-      title: # The person's title at the resturant (Owner, Head Chef, Wait Staff et al)
-      address: # The address
-      owner: # The owner's name if not this person.
-      url: # The establishment's website.
+  # # A noteable person for this recipe. Typically an author.
+  # person:
+  #   name: # The person's full name.
+  #   url: # The person's personal URL
+  #   headshot: # The person's headshot
+  #   colleague: # Any notable colleagues
+  #     - $ref: '#/definitions/person'
+  #   contact: # Their contact info
+  #     telephone: # Business telephone
+  #     email: # Their email
+  #   resturant: # Last known resturant they were employed/owned.
+  #     name: # Name of the resturant
+  #     title: # The person's title at the resturant (Owner, Head Chef, Wait Staff et al)
+  #     address: # The address
+  #     owner: # The owner's name if not this person.
+  #     url: # The establishment's website.

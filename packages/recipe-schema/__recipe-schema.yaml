@@ -1,0 +1,153 @@
+type: object
+properties:
+  version:
+    description: The version of the recipe schema
+    pattern: >-
+      ^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
+    type: string
+  type:
+    $ref: '#/definitions/DocumentType'
+  about:
+    $ref: '#/definitions/about'
+  ingredients:
+    type: array
+    items: {}
+  instructions:
+    type: array
+    items: {}
+  yield:
+    type: array
+    items: {}
+  time:
+    type: array
+    items: {}
+  flavors:
+    type: array
+    items: {}
+  serving:
+    type: array
+    items: {}
+  storing:
+    type: array
+    items: {}
+  partials:
+    type: array
+    items: {}
+  meta:
+    type: array
+    items: {}
+required:
+  - about
+  - flavors
+  - ingredients
+  - instructions
+  - meta
+  - partials
+  - serving
+  - storing
+  - time
+  - type
+  - version
+  - yield
+definitions:
+  DocumentType:
+    description: If anything but "recipe" it is a partial (for now)
+    enum:
+      - alteration
+      - component
+      - equiptment
+      - preparation
+      - recipe
+      - variation
+    type: string
+  about:
+    type: object
+    properties:
+      name:
+        description: >-
+          The name of the recipe. On a website this would be the title, for
+          instance.
+        type: string
+      alternates:
+        description: Other names that this recipe is ALSO known by.
+        type: array
+        items:
+          type: string
+      headnotes:
+        $ref: '#/definitions/description'
+        description: A synopsis of the recipe → https://t.ly/Otsc
+      images:
+        type: object
+        properties:
+          hero:
+            description: >-
+              The main/hero image for this resource. Extra sizes are not
+              acceptable here
+            type: string
+          gallery:
+            description: 'A list of -> #/definitions/image'
+            type: array
+            items: {}
+          all:
+            description: >-
+              A calculated value of all images from each aspect (include
+              about.images* and partials)
+            type: array
+            items: {}
+        required:
+          - all
+          - gallery
+          - hero
+    required:
+      - alternates
+      - headnotes
+      - images
+      - name
+  description:
+    description: >-
+      Long text typically used to explain or to futher elucidate an idea or
+      concept.
+    type: object
+    properties:
+      format:
+        $ref: '#/definitions/formats'
+      length:
+        description: >-
+          Used on all formats but I think this will only be useful for plain
+          text.
+        type: object
+        properties:
+          min:
+            description: min character count
+            type: number
+          max:
+            description: max character count
+            type: number
+        required:
+          - max
+          - min
+      external:
+        description: An external file/API to pull data. Low priority
+        type: string
+    required:
+      - external
+      - format
+      - length
+  formats:
+    description: |-
+      Format tells you which parser should be used. 
+
+      plain → No parser
+      markdown → Use a markdown parser
+      html-simple → Only alow certain tags & attributes to be used
+      html-extended → Full HTML. Use with care.
+      rich → I can't remember, sorry
+      csv → comma separated
+    enum:
+      - csv
+      - html
+      - markdown
+      - plain
+      - rich
+    type: string
+$schema: http://json-schema.org/draft-07/schema#

@@ -1,6 +1,15 @@
 import { about } from './root/about'
 import { DocumentType } from './enums/document'
 import { meta } from './meta'
+import { partials } from './root/partials'
+import { flavors } from './root/meta'
+import { ingredients } from './root/ingredients'
+import { instructions } from './root/instructions'
+import { serving } from './root/serving'
+import { storing } from './root/storing'
+import { time } from './root/time'
+import { yields } from './root/yield'
+
 
 /**
  * 
@@ -23,12 +32,12 @@ export interface Recipe {
   about: about
   meta: meta
   
-  ingredients: unknown[]
-  instructions: unknown[]
-  yield: unknown[]
-  time: unknown[]
-  flavors: unknown[]
-  serving: unknown[]
-  storing: unknown[]
-  partials: unknown[]
+  partials: partials[]
+  flavors: flavors[]
+  ingredients: ingredients[]
+  instructions: instructions[]
+  serving: serving[]
+  storing: storing[]
+  time: time[]
+  yield: yields[]
 }

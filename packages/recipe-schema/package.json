@@ -7,11 +7,14 @@
     "dist"
   ],
   "scripts": {
-    "dev": "tsc-watch src/index.ts --outDir ./dist --onSuccess \"node ./dist/index.js\"",
     "build": "yarn clean && yarn compile",
     "clean": "rimraf -rf ./dist",
     "compile": "tsc -p tsconfig.build.json",
-    "prepublishOnly": "yarn build"
+    "dev": "tsc-watch src/index.ts --outDir ./dist --onSuccess \"node ./dist/index.js\"",
+    "prepublishOnly": "yarn build",
+    "tests": "echo not yet",
+    "tests:watch": "echo not yet",
+    "tests:live": "tsc-watch tests/live-tests/index.ts --outDir ./dist/live --onSuccess \"node ./dist/live/tests/live-tests/index.js\""
   },
   "dependencies": {
     "js-yaml": "^4.1.0",

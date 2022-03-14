@@ -1,3 +1,3 @@
-export interface flavors {
+export interface meta {
   // TODO: Add me.
 }

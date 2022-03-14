@@ -1,6 +1,6 @@
 export interface stepSection {
   type
   label
-  description:
-  
+  // TODO: Should be description
+  description: string
 }

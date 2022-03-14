@@ -13,8 +13,7 @@
     "dev": "tsc-watch src/index.ts --outDir ./dist --onSuccess \"node ./dist/index.js\"",
     "prepublishOnly": "yarn build",
     "tests": "echo not yet",
-    "tests:watch": "echo not yet",
-    "tests:live": "tsc-watch tests/live-tests/index.ts --outDir ./dist/live --onSuccess \"node ./dist/live/tests/live-tests/index.js\""
+    "tests:watch": "echo not yet"
   },
   "dependencies": {
     "js-yaml": "^4.1.0",

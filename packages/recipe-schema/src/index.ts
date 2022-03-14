@@ -2,7 +2,6 @@ import { resolve, join } from 'path'
 import * as fs from 'fs'
 import * as yaml from 'js-yaml'
 import * as TJS from 'typescript-json-schema'
-import * as SC from './schema'
 
 // optionally pass argument to schema generator
 const settings: TJS.PartialArgs = {

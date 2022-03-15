@@ -83,19 +83,19 @@ schema: # The schema definition
 #   #     variants:
 #   #       $ref: '#/definitions/cost'
 #   # links: # An array of useful links that are related to this recipe that AREN'T a variation.
-
-# These top level items are REQUIRED for it to be a recipe.
-ingredients:
-  - $ref: '#/definitions/ingredient'
-  - $ref: '#/definitions/ingredient'
-
-# An array of instructions on how to cook the recipe. This is a combination of the cook 
-# instructions in here, the required variants, any inline alterations and all component
-# steps. 
 # 
-# Note: Instructions can be nested but it is best if you don't.
-instructions: 
-  $ref: '#/definitions/instructions'
+# # These top level items are REQUIRED for it to be a recipe.
+# ingredients:
+#   - $ref: '#/definitions/ingredient'
+#   - $ref: '#/definitions/ingredient'
+# 
+# # An array of instructions on how to cook the recipe. This is a combination of the cook 
+# # instructions in here, the required variants, any inline alterations and all component
+# # steps. 
+# # 
+# # Note: Instructions can be nested but it is best if you don't.
+# instructions: 
+#   $ref: '#/definitions/instructions'
 
 # TODO: This is the part that I have the most work to put into but is also super important.
 # Need to do a bit more reading on this to make sure that I understand it fully so that I can
@@ -108,13 +108,13 @@ yield: # Broken into 2 parts. The amount (so other values can be calculated late
   servings: # A numerical amount
   text: # Whatever it is eg: plate(s), loaf, bars.
 
-# If the top-level isn't set then all the properties are calculated based on recipe & partials.
-time: # this can be manually set otherwise they are calculated value.
-  cook: # Total cook time.
-  prep: # Total prep time.
-  active: # Active time.
-  inactive: # Inactive time.
-  total: # Can be supplied otherwise it is a calculated value based on times from other areas.
+# # If the top-level isn't set then all the properties are calculated based on recipe & partials.
+# time: # this can be manually set otherwise they are calculated value.
+#   cook: # Total cook time.
+#   prep: # Total prep time.
+#   active: # Active time.
+#   inactive: # Inactive time.
+#   total: # Can be supplied otherwise it is a calculated value based on times from other areas.
 
 # Not fully thought out but this could be another type of variant (or it is itself a variant)
 # The intention is to be able to change (heighten, mute, remove) flavors and use complementary
@@ -128,27 +128,27 @@ time: # this can be manually set otherwise they are calculated value.
 # Very low priority.
 flavors:
   desc: # A description of each flavor.
-
-# Serving procedures (Served while warm/cold). Finish with serving instructions including how to
-# plate, what temperature to serve, how to garnish
-serving: 
-  $ref: '#/definitions/description'
-  # Follows the same structure as instructions except it has it's own hero image.
-  # The renderer determines how this looks on the page. Could even be it's own page but it should,
-  # at the very least, look like the instructions.
-  plating:
-    $ref: '#/definitions/instructions'
-    image: # An image on how to [optionally] plate the dish/component.
-      $ref: '#/definitions/image'
-
-# How to store resulting food. If all components have "storing" value set then they should all 
-# be available in some fashion or aother. It is not supported to set the storing procedure for all
-# components manually here (let's say via component id).
 # 
-# The last instruction should be regarding storage, if applicable. For a cookie recipe, for example,
-# “Cookies will keep at room temperature in an airtight container for 3-4 days.”
-storing: 
-  $ref: '#/definitions/description'
+# # Serving procedures (Served while warm/cold). Finish with serving instructions including how to
+# # plate, what temperature to serve, how to garnish
+# serving: 
+#   $ref: '#/definitions/description'
+#   # Follows the same structure as instructions except it has it's own hero image.
+#   # The renderer determines how this looks on the page. Could even be it's own page but it should,
+#   # at the very least, look like the instructions.
+#   plating:
+#     $ref: '#/definitions/instructions'
+#     image: # An image on how to [optionally] plate the dish/component.
+#       $ref: '#/definitions/image'
+# 
+# # How to store resulting food. If all components have "storing" value set then they should all 
+# # be available in some fashion or aother. It is not supported to set the storing procedure for all
+# # components manually here (let's say via component id).
+# # 
+# # The last instruction should be regarding storage, if applicable. For a cookie recipe, for example,
+# # “Cookies will keep at room temperature in an airtight container for 3-4 days.”
+# storing: 
+#   $ref: '#/definitions/description'
 
 # PARTIALS
 # A partial has all the same properties as a recipe. The intention is that they can be imported to
@@ -364,79 +364,83 @@ definitions:
   #   value: # Numerical value
   #   currency: # The currency type to know who to render
   
-  # A recipe step. Describes everything required to execute a recipe from tools, ingredients,
-  # description, images and text.
-  step:
-    type: step
-    name: # "Blend eggs"
-    tool: # A single tool that is used here
-      $ref: '#/definitions/tool'
-    time: 
-    desc: # The step text. Maybe HTML, Markdown or favored flavor of text. Is not "external".
-      $ref: '#/definitions/description'
-    images: # Step images. Will most likely be a single image but can be a gallery for
-            # multiple views of the same thing
-      $ref: '#/definitions/description'
-    timing: # A time estimate for when something is complete → https://t.ly/X5cw
-            # It can be very helpful to your readers if you let them know how much time a
-            # recipe will take to make. This can take the form of the total time or it can
-            # be broken down into the preparation time, cooking time, and total time. It's
-            # also good to call out if a part of the recipe will take a really long period
-            # of time, such as marinating over night.
+  # # A recipe step. Describes everything required to execute a recipe from tools, ingredients,
+  # # description, images and text.
+  # step:
+  #   type: step
+  #   name: # "Blend eggs"
+  #   tool: # A single tool that is used here
+  #     $ref: '#/definitions/tool'
+  #   time: number
+  #   text:
+  #       long:
+  #         $ref: '#/definitions/description'
+  #       short: # short text limited to an arbitrary 300 characters. Some chefs write
+  #              # paragraphs which is great for a blog but professional chefs do not
+  #              # need that and there are understood ways of working between teams
+  #              # so short versions are useful.
+  #   images: # Step images. Will most likely be a single image but can be a gallery for
+  #           # multiple views of the same thing
+  #   timing: # A time estimate for when something is complete → https://t.ly/X5cw
+  #           # It can be very helpful to your readers if you let them know how much time a
+  #           # recipe will take to make. This can take the form of the total time or it can
+  #           # be broken down into the preparation time, cooking time, and total time. It's
+  #           # also good to call out if a part of the recipe will take a really long period
+  #           # of time, such as marinating over night.
   
   # Only for organizing steps. Use sparingly.
-  stepSection:
-    type: section
-    label: # A lable if to be shown
-    desc: # some generic text
-    steps: # child steps
-      $ref: '#/definitions/instructions'
+  # stepSection:
+  #   type: section
+  #   label: # A lable if to be shown
+  #   desc: # some generic text
+  #   steps: # child steps
+  #     $ref: '#/definitions/instructions'
   
   # Can only ever be a child of a step
-  stepTip:
-    type: tip
-    label: # A lable if to be shown
-    desc: # some generic text. It is plain text for now.
-    steps: # child steps
-      $ref: '#/definitions/instructions'
-
-  # A modifier for an ingrediant (for now at least)
-  modifier: 
-    id: # ingrediant id. Useful to build URLs, to keep using the same ingredients.
-    text: # Plain text modifier text    
-
-  # Use these and the renderer will reformat using the full word and pluralize.
-  # Will find one that already exists so I don't have to type all these out manually.
-  measurements:
-    metric: 
-      - oz: Ounce
-      - lbs: Pounds
-    imperial:
-      - same: as-above
-
-  # An array of ingredients used. Cannot use partials yet but it makes sense to do that here.
-  ingredients: 
-    - id: # Ingrediant id. @pattern → ingredient + 6 char hash
-      name: # The ingredient name. Plain text.
-      delta: # Order in which to show. Heavier (larger) numbers sink bottom, lighter float.
-             # If delta is excluted then 0 is used. If none have a delta then they are all 
-             #  0 and will show up in order that they are added.
-             #  
-             # Main use for delta anywhere in this schema is best for partials.
-      units: # the chosen units, otherwise it uses the top level units
-      amount: # Just a regular number of 
-        $ref: '#/definitions/measurements'
-      required: # If this ingredient is required
-      alternate: # an alternate ingredient that could be used instead
-      link: # An array of url links for this ingredient
-      handling: # Instructions on how to handle the ingredient if required
-      life: # How long it will ingrediant last.
-      modifier: # A string (or ID) that is a modifier on the ingredient. For instance smashed, unsalted
-                # granulated or powered. So when the ingredient is displayed it could, depending on 
-                # the renderer, look like "Walnuts, crushed", "Milk, whole", "Cake Crumbs, dry", or
-                # "Eggs, room temperature". This is super useful by keeping data normalized. The
-                # other option is to put the modifier right into the name but this is less ideal.
-        $ref: '#/definitions/modifier'
+  # stepTip:
+  #   type: tip
+  #   label: # A lable if to be shown
+  #   desc: # some generic text. It is plain text for now.
+  #   steps: # child steps
+  #     $ref: '#/definitions/instructions'
+  # 
+  # # A modifier for an ingrediant (for now at least)
+  # modifier: 
+  #   id: # ingrediant id. Useful to build URLs, to keep using the same ingredients.
+  #   text: # Plain text modifier text    
+  # 
+  # # Use these and the renderer will reformat using the full word and pluralize.
+  # # Will find one that already exists so I don't have to type all these out manually.
+  # measurements:
+  #   metric: 
+  #     - oz: Ounce
+  #     - lbs: Pounds
+  #   imperial:
+  #     - same: as-above
+  # 
+  # # An array of ingredients used. Cannot use partials yet but it makes sense to do that here.
+  # ingredient: 
+  #   - id: # Ingrediant id. @pattern → ingredient + 6 char hash
+  #     name: # The ingredient name. Plain text.
+  #     delta: # Order in which to show. Heavier (larger) numbers sink bottom, lighter float.
+  #            # If delta is excluted then 0 is used. If none have a delta then they are all 
+  #            #  0 and will show up in order that they are added.
+  #            #  
+  #            # Main use for delta anywhere in this schema is best for partials.
+  #     units: # the chosen units, otherwise it uses the top level units
+  #     amount: # Just a regular number of 
+  #       $ref: '#/definitions/measurements'
+  #     required: # If this ingredient is required
+  #     alternate: # an alternate ingredient that could be used instead
+  #     link: # An array of url links for this ingredient
+  #     handling: # Instructions on how to handle the ingredient if required
+  #     life: # How long it will ingrediant last.
+  #     modifier: # A string (or ID) that is a modifier on the ingredient. For instance smashed, unsalted
+  #               # granulated or powered. So when the ingredient is displayed it could, depending on 
+  #               # the renderer, look like "Walnuts, crushed", "Milk, whole", "Cake Crumbs, dry", or
+  #               # "Eggs, room temperature". This is super useful by keeping data normalized. The
+  #               # other option is to put the modifier right into the name but this is less ideal.
+  #       $ref: '#/definitions/modifier'
   
   # Low priority, just describe it
   equiptment: 
@@ -469,19 +473,19 @@ definitions:
         - optional: true
         - desc: Lorem ipsum
 
-  # All the properties required for a tool that is used in a recipe.
-  tool: # $ref: https://schema.org/HowToTool
-    name: # The name of the tool
-    type: 
-      $ref: '#/definitions/types/tool'
-    alternateName: # Other names that this tool is known by
-    quantity: # The amount required for this activity
-    description: # A description of the tool
-    image: # An image URL
-    potentialAction: #Indicates a potential (ideal) Action
-    url: # A store url
-    tutorials: # A list of urls to a tutorial
-    consumables: # Consumables for the tool required
+  # # All the properties required for a tool that is used in a recipe.
+  # tool: # $ref: https://schema.org/HowToTool
+  #   name: # The name of the tool
+  #   type: 
+  #     $ref: '#/definitions/types/tool'
+  #   alternateName: # Other names that this tool is known by
+  #   quantity: # The amount required for this activity
+  #   description: # A description of the tool
+  #   image: # An image URL
+  #   potentialAction: #Indicates a potential (ideal) Action
+  #   url: # A store url
+  #   tutorials: # A list of urls to a tutorial
+  #   consumables: # Consumables for the tool required
 
   # mise en place
   # It should be noted that preparations could have tools in it as well.  
@@ -576,30 +580,23 @@ definitions:
   #         - step
   #           - step section
   #         - step
-  instructions:
-    - type: # can be of any type ⇉ [$refs → step | stepSection | stepTip]
-        $ref: '#/definitions/types/instruction'
-      text: 
-        long:
-          $ref: '#/definitions/description'
-        short: # short text limited to an arbitrary 300 characters. Some chefs write
-               # paragraphs which is great for a blog but professional chefs do not
-               # need that and there are understood ways of working between teams
-               # so short versions are useful.
-      name: # Not required. A label for this step
-      id: # A string key
-      totalTime: # The total time for this step and all subsqeuent steps (add all times together).
-      allConsumables: # Required for certain tools. re: Siphons require charges
-      estimatedCost:
-        $ref: '#/definitions/cost'
-      step: 
-        $ref: '#/definitions/step'
-      techniques: # an array of URLs that link out to how to "do thing". Use these for sp
-      tools: # A list of tools that would be used in here. This isn't required but should be added
-             # to the calculated tools list.
-      why: # A side note, a reasoning as to why a technique or instruction is happening. Also useful
-           # to explain the chemistry if important.
-        $ref: '#/definitions/description'  
+  # instructions:
+  #   - type: # can be of any type ⇉ [$refs → step | stepSection | stepTip]
+  #       $ref: '#/definitions/types/instruction'
+  #     name: # Not required. A label for this step
+  #     id: # A string key
+  #     totalTime: # The total time for this step and all subsqeuent steps (add all times together).
+  #     allConsumables: # Required for certain tools. re: Siphons require charges
+  #     estimatedCost:
+  #       $ref: '#/definitions/cost'
+  #     step: 
+  #       $ref: '#/definitions/step'
+  #     techniques: # an array of URLs that link out to how to "do thing". Use these for sp
+  #     tools: # A list of tools that would be used in here. This isn't required but should be added
+  #            # to the calculated tools list.
+  #     why: # A side note, a reasoning as to why a technique or instruction is happening. Also useful
+  #          # to explain the chemistry if important.
+  #       $ref: '#/definitions/description'  
 
   # image: 
   #   name: # The name of the image. Used for captions, alt, aria.

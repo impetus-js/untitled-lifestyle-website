@@ -3,7 +3,7 @@ import { person } from '../definitions/person'
 import { cost } from '../definitions/cost'
 import { image } from '../definitions/image'
 import { link } from '../definitions/link'
-import { radix } from '../enums/radix'
+import { radix } from '../enums'
 
 /**
  * Describing the metadata. Useful for websites, descriptions etc.

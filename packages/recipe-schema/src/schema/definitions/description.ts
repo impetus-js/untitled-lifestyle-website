@@ -1,4 +1,4 @@
-import { formats } from '../enums/formats'
+import { formats } from '../enums'
 
 /**
  * Long text typically used to explain or to futher elucidate an idea or concept.

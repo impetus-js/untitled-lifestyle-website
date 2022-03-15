@@ -1,4 +1,4 @@
-import { toolTypes } from '../enums/toolTypes'
+import { toolTypes } from '../enums'
 import { description } from './description'
 import { image } from './image'
 

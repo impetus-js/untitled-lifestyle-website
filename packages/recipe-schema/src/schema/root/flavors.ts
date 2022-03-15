@@ -1,3 +1,5 @@
+import { description } from '../definitions/description'
+
 export interface flavors {
-  // TODO: Add me.
+  desc: description
 }

@@ -1,63 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Bulma Nekosora</title>
-    <!-- stylesheets, fonts, etc -->
-    <link rel="stylesheet" href="css/bulma.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link
-      href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
-      rel='stylesheet' type='text/css'>
-    <link
-      href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
-      rel='stylesheet' type='text/css'>
-    <!-- end of stylesheets, fonts, etc -->
-  </head>
 
-  <body>
-    <!-- this root div exists to handle footer problems -->
+export default () => (
+  <>
     <div id="root">
-      <!-- top navigation -->
-      <div class="main-navigation">
-        <nav class="nav">
-          <div class="container">
-            <!-- this is always shown -->
-            <div class="nav-left">
-              <a class="nav-item is-tab" href="index.html">nekosora</a>
+      {/* <!-- top navigation --> */}
+      <div className="main-navigation">
+        <nav className="nav">
+          <div className="container">
+            {/* <!-- this is always shown --> */}
+            <div className="nav-left">
+              <a className="nav-item is-tab" href="index.html">nekosora</a>
             </div>
-            <!-- this is only shown on mobile platform dimensions -->
-            <div class="nav-center is-hidden-desktop is-hidden-tablet">
-              <a class="nav-item is-tab" href="post.html">static post</a>
-              <a class="nav-item is-tab" href="category.html">category</a>
-              <a class="nav-item is-tab" href="about.html">about</a>
-              <a class="nav-item is-tab" href="contact.html">contact</a>
+            {/* <!-- this is only shown on mobile platform dimensions --> */}
+            <div className="nav-center is-hidden-desktop is-hidden-tablet">
+              <a className="nav-item is-tab" href="post.html">static post</a>
+              <a className="nav-item is-tab" href="category.html">category</a>
+              <a className="nav-item is-tab" href="about.html">about</a>
+              <a className="nav-item is-tab" href="contact.html">contact</a>
             </div>
-            <!-- this is shown in every other dimension (desktops, tablets) -->
-            <div class="nav-right is-hidden-mobile">
-              <a class="nav-item is-tab" href="post.html">static post</a>
-              <a class="nav-item is-tab" href="category.html">category</a>
-              <a class="nav-item is-tab" href="about.html">about</a>
-              <a class="nav-item is-tab" href="contact.html">contact</a>
+            {/* <!-- this is shown in every other dimension (desktops, tablets) --> */}
+            <div className="nav-right is-hidden-mobile">
+              <a className="nav-item is-tab" href="post.html">static post</a>
+              <a className="nav-item is-tab" href="category.html">category</a>
+              <a className="nav-item is-tab" href="about.html">about</a>
+              <a className="nav-item is-tab" href="contact.html">contact</a>
             </div>
           </div>
         </nav>
-        <!-- end top navigation -->
+        {/* <!-- end top navigation --> */}
       </div>
 
-      <!-- main header (text and image hero) -->
-      <div class="main-header">
-        <section class="hero is-medium">
-          <div class="hero-body">
-            <div class="container">
-              <div class="columns is-mobile is-centered">
-                <div class="column is-7 has-text-centered">
-                  <div class="buffer">
-                    <h3 class="title is-3">A blog, probably</h3>
+      {/* <!-- main header (text and image hero) --> */}
+      <div className="main-header">
+        <section className="hero is-medium">
+          <div className="hero-body">
+            <div className="container">
+              <div className="columns is-mobile is-centered">
+                <div className="column is-7 has-text-centered">
+                  <div className="buffer">
+                    <h3 className="title is-3">A blog, probably</h3>
                   </div>
-                  <div class="buffer">
-                    <h4 class="subtitle is-4">I mean, it can be</h4>
+                  <div className="buffer">
+                    <h4 className="subtitle is-4">I mean, it can be</h4>
                   </div>
                 </div>
               </div>
@@ -65,42 +48,42 @@
           </div>
         </section>
       </div>
-      <!-- end main header -->
+      {/* <!-- end main header --> */}
 
-      <!-- main content -->
-      <div class="main-content">
-        <div class="container">
-          <div class="columns is-mobile">
-            <!-- side bar -->
-            <div class="column is-4 is-narrow">
-              <div class="section">
-                <div class="sidebar">
-                  <!-- side bar header-->
-                  <div class="sidebar-header-single">
-                    <h4 class="title is-4">Some Post with Passion</h4>
-                    <h5 class="subtitle is-5">A Subtitle without Passion</h5>
+      {/* <!-- main content --> */}
+      <div className="main-content">
+        <div className="container">
+          <div className="columns is-mobile">
+            {/* <!-- side bar --> */}
+            <div className="column is-4 is-narrow">
+              <div className="section">
+                <div className="sidebar">
+                  {/* <!-- side bar header--> */}
+                  <div className="sidebar-header-single">
+                    <h4 className="title is-4">Some Post with Passion</h4>
+                    <h5 className="subtitle is-5">A Subtitle without Passion</h5>
                   </div>
-                  <!-- end of side bar header -->
-                  <!-- side bar content -->
-                  <div class="sidebar-list-single">
+                  {/* <!-- end of side bar header --> */}
+                  {/* <!-- side bar content --> */}
+                  <div className="sidebar-list-single">
                     <p>Posted on January 21st 2019, 10:00am</p>
                     <p>Written by Author</p>
                   </div>
-                  <!-- end of side bar content -->
-                  <!-- side bar footer -->
-                  <div class="sidebar-footer-single">
+                  {/* <!-- end of side bar content --> */}
+                  {/* <!-- side bar footer --> */}
+                  <div className="sidebar-footer-single">
                     <p><a href="index.html">Back to Home</a></p>
                   </div>
-                  <!-- end of side bar footer -->
+                  {/* <!-- end of side bar footer --> */}
                 </div>
               </div>
             </div>
-            <!-- end of side bar -->
-            <!-- post -->
-            <div class="column is-8">
-              <div class="section">
-                <div class="post-single">
-                  <div class="post-single-content">
+            {/* <!-- end of side bar --> */}
+            {/* <!-- post --> */}
+            <div className="column is-8">
+              <div className="section">
+                <div className="post-single">
+                  <div className="post-single-content">
                     <p>Nulla semper ipsum consequat magna vestibulum ornare. Donec dictum nibh vitae orci pellentesque
                       rhoncus a sed dolor. Integer non suscipit ex. Quisque tristique est ac vulputate dictum. Vestibulum
                       tristique ante in nulla vulputate interdum. Pellentesque habitant morbi tristique senectus et netus
@@ -139,25 +122,23 @@
                 </div>
               </div>
             </div>
-            <!-- end of post -->
+            {/* <!-- end of post --> */}
           </div>
         </div>
       </div>
-      <!-- end of main content -->
+      {/* <!-- end of main content --> */}
     </div>
-    <!-- end of root div -->
 
-    <!-- footer -->
-    <div class="hero-footer footer footer-custom">
-      <div class="container">
-        <div class="has-text-centered">
-          <span class="icon">
-            <i class="fa fa-github"></i>
+    {/* <!-- footer --> */}
+    <div className="hero-footer footer footer-custom">
+      <div className="container">
+        <div className="has-text-centered">
+          <span className="icon">
+            <i className="fa fa-github"></i>
           </span>
           <p>template by <a href="http://github.com/plasticneko">github.com/plasticneko</a></p>
         </div>
       </div>
     </div>
-    <!-- end of footer -->
-  </body>
-</html>
+  </>
+)

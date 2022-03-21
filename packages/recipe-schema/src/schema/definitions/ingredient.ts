@@ -3,7 +3,7 @@ import { measurements } from './measurements'
 import { allunits } from '../enums'
 
 /**
- * The cost of this particular item.
+ * 
  */
  export interface ingredient {
   /**

@@ -1,5 +1,5 @@
 import { description } from '../definitions/description'
-import { instruction } from '../definitions/instruction'
+import { instructions } from '../definitions/instructions'
 import { image } from '../definitions/image'
 
 /**
@@ -11,7 +11,7 @@ import { image } from '../definitions/image'
 export interface serving {
   desc: description
   plating: {
-    text: instruction
+    text: instructions
     image: image[]
   }
 }

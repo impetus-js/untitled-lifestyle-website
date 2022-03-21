@@ -1,5 +1,5 @@
 {
-  "name": "vite-react-ts",
+  "name": "@untitled-lifestyle-website/layouts",
   "version": "0.0.0",
   "description": "React Typescript Starter Template with Vite",
   "author": "Malolan B. <uchihamalolan@gmail.com> (https://twitter.com/malolan12)",
@@ -19,6 +19,7 @@
   "dependencies": {
     "bulma": "^0.9.3",
     "react": "^17.0.2",
+    "react-bulma-components": "^4.1.0",
     "react-dom": "^17.0.2",
     "react-error-boundary": "^3.1.4"
   },

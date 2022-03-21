@@ -3,6 +3,19 @@
  */
 export type schemaType = 'recipe' | 'component' | 'variation' | 'equiptment' | 'preparation' | 'alteration'
 
+export type diet = 'diabetic' | 'glutenfree' | 'halal' | 'hindu' | 'kosher' | 'lowcalorie' | 'lowfat' | 'lowlactose' | 'lowsalt' | 'vegan' | 'vegetarian'
+
+export type unitType = 'imperial' | 'metric'
+export type volumeImp = 't' | 'tsp.' | 'T' | 'tbl.' | 'tbs.' | 'tbsp.' | 'fl oz' | 'c' | 'p' | 'pt' | 'q' | 'qt' | 'g' | 'gal'
+export type volumeMetric = 'ml' | 'l'
+export type weightImp = 'lb' | 'oz'
+export type weightMetric = 'mg' | 'g' | 'kg'
+export type lengthImp = 'in'
+export type lengthMetric = 'mm' | 'cm' | 'm'
+export type temp = 'imperial' | 'metric'
+
+export type allunits = volumeImp | volumeMetric | weightImp | weightMetric | lengthImp | lengthMetric | temp
+
 /**
  * diff → Show a diff of the two recipes inline.
  * tooltip → A short note to tell the reader that there is a difference between

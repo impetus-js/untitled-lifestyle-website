@@ -1,5 +1,6 @@
 import { modifier } from './modifier'
 import { measurements } from './measurements'
+import { allunits } from '../enums'
 
 /**
  * The cost of this particular item.
@@ -26,10 +27,8 @@ import { measurements } from './measurements'
 
   /**
    * The chosen units, otherwise it uses the top level units
-   * 
-   * TODO: Fix me.
    */
-  units: unknown
+  units: allunits
 
   /**
    * Just a regular number of thingies needed. Ya know? Ya dig?

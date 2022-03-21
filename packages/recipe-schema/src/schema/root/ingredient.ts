@@ -22,13 +22,6 @@ export interface ingredient {
   delta: number
 
   /**
-   * the chosen units, otherwise it uses the top level units
-   * 
-   * TODO: Figure out units.
-   */
-  units: unknown
-
-  /**
    * Just a regular number of 
    */
   amount: measurements

@@ -18,8 +18,10 @@ export interface image {
   
   /**
    * A publish date
+   * 
+   * @format date
    */
-  published: unknown
+  published: string
   
   /**
    * A url to the FULL SIZED IMAGE

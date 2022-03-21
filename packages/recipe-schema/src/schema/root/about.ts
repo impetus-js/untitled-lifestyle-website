@@ -3,7 +3,7 @@ import { person } from '../definitions/person'
 import { cost } from '../definitions/cost'
 import { image } from '../definitions/image'
 import { link } from '../definitions/link'
-import { radix } from '../enums'
+import { radix, unitType } from '../enums'
 
 /**
  * Describing the metadata. Useful for websites, descriptions etc.
@@ -59,11 +59,11 @@ export interface about {
   separator: radix
 
   /**
-   * Allowed unit types ie metic, imperial, whatever else. Used for conversions.
+   * The specified unit types for this recipe unit types ie metic, imperial, whatever else. Used for conversions.
    * 
    * @TODO: How does this work with separator?
    */
-  units: unknown
+  units: units
 
   images: {
     /**
@@ -78,6 +78,8 @@ export interface about {
 
     /**
      * A calculated value of all images from each aspect (include about.images* and partials)
+     * 
+     * TODO: Is this one required? It isn't a calcluated value.
      */
     all: image[]
   }

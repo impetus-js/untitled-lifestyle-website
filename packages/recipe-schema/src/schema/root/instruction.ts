@@ -2,6 +2,7 @@ import { instructionType } from '../enums'
 import { cost } from '../definitions/cost'
 import { tool } from '../definitions/tool'
 import { step } from '../definitions/step'
+import { consumeables } from '../definitions/consumeables'
 
 /**
  * TODO: This part of the schema is actually a bit busted. Need to think on it a bit more.
@@ -65,7 +66,7 @@ export interface instruction {
   /**
    * Required for certain tools. re: Siphons require charges
    */
-  allConsumeables: unknown[]
+  allConsumeables: consumeables[]
   
   /**
    * The amount the author guesses for this instruction based on it's ingredients.

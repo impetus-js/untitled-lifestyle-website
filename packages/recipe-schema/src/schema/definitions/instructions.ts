@@ -1,10 +1,5 @@
-import { description } from './description'
-import { cost } from './cost'
 import { step } from './step'
-import { link } from './link'
 import { tool } from './tool'
-
-type instructionType = 'step' | 'section' | 'tip'
 
 /**
  * An array of steps, tips and sections.
@@ -23,7 +18,7 @@ type instructionType = 'step' | 'section' | 'tip'
  *   - step
  */
 export interface instructions {
-  total: {
+  totals: {
     /**
      * The total time for this step and all subsqeuent steps (add all times together). 
      * 

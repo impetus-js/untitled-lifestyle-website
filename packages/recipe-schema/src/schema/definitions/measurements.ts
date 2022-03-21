@@ -14,7 +14,6 @@ type GenericKeyVal = {
   [key: string]: string
 }
  export interface measurements {
-  metric: GenericKeyVal
-
-  imperial: GenericKeyVal
+  metric?: GenericKeyVal
+  imperial?: GenericKeyVal
 }

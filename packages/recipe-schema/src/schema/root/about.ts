@@ -63,7 +63,7 @@ export interface about {
    * 
    * @TODO: How does this work with separator?
    */
-  units: units
+  units: unitType
 
   images: {
     /**

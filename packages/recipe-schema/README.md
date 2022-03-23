@@ -1,5 +1,7 @@
 # cooking-recipe-schema
-A new JSON schema specifically for food recipes. Meant to support food blogs as well as chefs[^1]
+A new JSON schema specifically for food recipes. Meant to support food blogs, chefs[^1] and for me Food Labs.
+
+I like to do food labs which has more complex requirements and partials are an important part of that. 
 
 # Seeing schema
 1. clone → `git clone https://github.com/mrpotatoes/untitled-lifestyle-website.git`

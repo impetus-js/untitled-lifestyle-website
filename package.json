@@ -9,11 +9,12 @@
     "apps/*"
   ],
   "scripts": {
-    "docs": "doctoc --title '**Table of content**' README.md",
-    "clean:all": "pnpm run -r clean",
     "build": "pnpm run -r build",
+    "clean:all": "pnpm run -r clean",
+    "docs": "doctoc --title '**Table of content**' README.md",
+    "lint": "eslint --ext js,ts,tsx .",
     "test": "pnpm run -r test",
-    "lint": "eslint --ext js,ts,tsx ."
+    "reinstall": "clear; yarn clean:all; pnpm install; size node_modules/"
   },
   "devDependencies": {
     "@nighttrax/eslint-config-tsx": "~11.0.0",

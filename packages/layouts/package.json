@@ -10,7 +10,7 @@
     "build": "tsc && vite build",
     "test": "jest",
     "serve": "vite preview",
-    "prepare": "husky install",
+    "clean:all": "rm -rf ./dist node_modules",
     "commit": "commit",
     "format": "prettier --write --ignore-unknown .",
     "lint": "eslint --cache ./src",
@@ -19,7 +19,6 @@
   "dependencies": {
     "bulma": "^0.9.3",
     "react": "^17.0.2",
-    "react-bulma-components": "^4.1.0",
     "react-dom": "^17.0.2",
     "react-error-boundary": "^3.1.4"
   },
@@ -49,7 +48,6 @@
     "eslint-plugin-react": "^7.29.3",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-testing-library": "^5.0.6",
-    "husky": "^7.0.4",
     "jest": "^27.5.1",
     "lint-staged": "^12.3.5",
     "postcss": "^8.4.8",

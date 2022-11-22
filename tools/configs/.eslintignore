@@ -4,4 +4,4 @@ dist
 build
 
 
-examples/cra-ejected-babel
+apps/cra-ejected-babel

@@ -10,7 +10,8 @@
   ],
   "scripts": {
     "build": "pnpm run -r build",
-    "clean:all": "pnpm run -r clean",
+    "clean:all": "rm -rf node_modules; pnpm run -r clean",
+    "clean:install": "clear; yarn clean:all; pnpm i",
     "docs": "doctoc --title '**Table of content**' README.md",
     "lint": "eslint --ext js,ts,tsx .",
     "test": "pnpm run -r test",

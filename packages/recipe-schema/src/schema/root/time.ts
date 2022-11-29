@@ -40,8 +40,6 @@ export interface time {
    * the total calculation. This is a property that should be left out of authoring and is typically
    * filled in by an automated process of some sort.
    * 
-   * TODO: Is this required at this level of the schema?
-   * 
    * @format time
    */
   total?: string

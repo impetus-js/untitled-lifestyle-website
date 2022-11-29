@@ -1,4 +1,4 @@
-import { instructionType } from '../enums'
+import { instructionType } from '../types'
 import { cost } from '../definitions/cost'
 import { tool } from '../definitions/tool'
 import { step } from '../definitions/step'
@@ -49,7 +49,7 @@ export interface instruction {
   type: instructionType
 
   /**
-   * Not required. A label for this step
+   * A [useful] label for this step
    */
   name?: string
   
@@ -69,11 +69,9 @@ export interface instruction {
   allConsumeables: consumeables[]
   
   /**
-   * The amount the author guesses for this instruction based on it's ingredients.
-   * 
-   * TODO: I fell this is in the wrong place.
+   * The cost the author guesses for this instruction based on it's ingredients.
    */
-  estimatedCost: cost
+  estimatedCost?: cost
   
   /**
    * 

@@ -1,7 +1,7 @@
 import { nutrition } from '../definitions/nutrition'
 import { link } from '../definitions/link'
 import { description } from '../definitions/description'
-import { diet } from '../enums'
+import { diet } from '../types'
 
 export interface meta {
   /**
@@ -37,7 +37,7 @@ export interface meta {
   cuisines: string[]
   
   /**
-   * TODO: Determine if this is required here.
+   * Review links that people have written about this particular recipe.
    */
-  reviews: link[]
+  reviews?: link[]
 }

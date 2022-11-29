@@ -3,7 +3,7 @@ import { person } from '../definitions/person'
 import { cost } from '../definitions/cost'
 import { image } from '../definitions/image'
 import { link } from '../definitions/link'
-import { radix, unitType } from '../enums'
+import { radix, unitType } from '../types'
 
 /**
  * Describing the metadata. Useful for websites, descriptions etc.
@@ -61,7 +61,7 @@ export interface about {
   /**
    * The specified unit types for this recipe unit types ie metic, imperial, whatever else. Used for conversions.
    * 
-   * @TODO: How does this work with separator?
+   * @TODO: How does this work with separator? A worry for the implementation nerds 🤣
    */
   units: {
     measurements: unitType
@@ -86,27 +86,27 @@ export interface about {
      * A list of -> #/definitions/image
      */
     gallery: image[]
-
-    /**
-     * A calculated value of all images from each aspect (include about.images* and partials)
-     * 
-     * TODO: Is this one required? It isn't a calcluated value.
-     */
-    all: image[]
   }
 
   /**
    * A calculated property of all the costs into one.
    */
   totalCost: {
+    /**
+     * As the name suggests this is a caluclated value of all the costs summed up from anywhere a cost could be found.
+     * 
+     * It would be smart to calucate all the component costs first them sum those up here.
+     */
     everything: cost
 
     /**
      * Calc all within partials separately.
      */
     per?: {
+      /**
+       * Should be noted that component will show the cost breakdown on a per-component level. If there are costs associated with ingredients, tools etc then all the summed costs from each of those components would show up under the component in here
+       */
       component: cost
-      variants: cost
     }
   }
 

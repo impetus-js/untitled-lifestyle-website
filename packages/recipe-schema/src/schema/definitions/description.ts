@@ -1,4 +1,4 @@
-import { formats } from '../enums'
+import { formats } from '../types'
 
 /**
  * Long text typically used to explain or to futher elucidate an idea or concept.
@@ -8,8 +8,10 @@ export interface description {
 
   /**
    * Used on all formats but I think this will only be useful for plain text.
+   * 
+   * @note: Should have a sensible default.
    */
-  length: {
+  length?: {
     /**
      * min character count
      */

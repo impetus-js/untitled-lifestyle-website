@@ -26,16 +26,6 @@ export type allunits = volumeImp | volumeMetric | weightImp | weightMetric | len
  */
 export type alterations = 'diff' | 'tooltip' | 'comment'
 
-// TODO: Delete me?
-export interface types {
-  instruction:string
-  alterations: string
-  document: string
-  unit: string
-  tool: string
-  prep: string
-}
-
 /**
  * A tool type
  */

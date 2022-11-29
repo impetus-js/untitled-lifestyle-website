@@ -1,6 +1,6 @@
 import { modifier } from './modifier'
 import { measurements } from './measurements'
-import { allunits } from '../enums'
+import { allunits } from '../types'
 
 /**
  * 

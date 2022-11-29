@@ -11,7 +11,8 @@
     "clean": "pnpm -rf ./dist",
     "clean:all": "rm -rf ./dist node_modules",
     "compile": "tsc -p tsconfig.build.json",
-    "dev": "tsc-watch src/index.ts --outDir ./dist --onSuccess \"node ./dist/index.js\"",
+    "dev": "tsc-watch --onSuccess \"node ./dist/index.js\"",
+    "dev:first": "tsc-watch src/index.ts --outDir ./dist --onSuccess \"node ./dist/index.js\"",
     "prepublishOnly": "pnpm build",
     "tests": "echo not yet",
     "tests:watch": "echo not yet"

@@ -14,7 +14,7 @@ const compilerOptions: TJS.CompilerOptions = {
 }
 
 const program = TJS.getProgramFromFiles([resolve('src/schema/index.ts')], compilerOptions)
-const schema = TJS.generateSchema(program, 'Recipe', settings)
+const schema = TJS.generateSchema(program, 'recipe', settings)
 const output = yaml.dump(schema)
 
 fs.writeFileSync(join('.', '__recipe-schema.yaml'), output, 'utf8')

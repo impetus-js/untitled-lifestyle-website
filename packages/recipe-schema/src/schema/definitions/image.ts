@@ -1,4 +1,4 @@
-import { imageSizes } from "../enums";
+import { imageSizes } from "../types";
 import { description } from "./description";
 import { person } from "./person";
 

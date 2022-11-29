@@ -4,8 +4,7 @@ import { image } from '../definitions/image'
 import { tool } from '../definitions/tool'
 
 /**
- * A recipe step. Describes everything required to execute a recipe from tools, ingredients,
-  # description, images and text.
+ * A recipe step. Describes everything required to execute a recipe from tools, ingredients, description, images and text.
  */
 export interface step {
   /**

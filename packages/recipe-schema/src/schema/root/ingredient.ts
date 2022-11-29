@@ -56,7 +56,7 @@ export interface ingredient {
    * granulated or powered. So when the ingredient is displayed it could, depending on  the
    * renderer, look like "Walnuts, crushed", "Milk, whole", "Cake Crumbs, dry", or "Eggs,
    * room temperature". This is super useful by keeping data normalized. The other option is to put
-   * the modifier right into the name but this is less ideal. 
+   * the modifier right into the name but that would be less ideal. 
    */
   modifier: modifier
 }

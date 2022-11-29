@@ -29,14 +29,15 @@ export interface person {
     /**
      * Telephone. No format
      * 
-     * TODO: Use @pattern here
+     * @pattern ^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$
+     * @see https://ihateregex.io/expr/phone/
      */
     telephone?: string
 
     /**
      * Person's email
      * 
-     * TODO: Use @pattern here
+     * @pattern [^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+
      */
     email?: string
   }

@@ -1,5 +1,13 @@
+Shapes I still need thinking on
+
+## Measurements
+File: `src/schema/definitions/measurements.ts`
+
+How should measurments be captured?
+
 ## TODOs
 - [ ] Coming soon page
+- [ ] Rename `component` to `aspect`
 - [ ] Read those "Recipe standardizations" documents.
 - [ ] Finalize `recipe` schema
 - [ ] Finalize logo & name & brand

@@ -1,4 +1,4 @@
-import { schemaType } from './enums'
+import { schemaType } from './types'
 import { meta } from './root/meta'
 import { about } from './root/about'
 import { flavors } from './root/flavors'
@@ -10,7 +10,7 @@ import { storing } from './root/storing'
 import { time } from './root/time'
 import { yields } from './root/yield'
 
-export interface Recipe {
+export interface recipe {
   /**
    * The version of the recipe schema
    * @see https://semver.org/
@@ -39,7 +39,9 @@ export interface Recipe {
    */
   instructions: instruction[]
 
-  // TODO: Finish me.
+  /**
+   * Total recipe yields
+   */
   yield: yields[]
 
   /**

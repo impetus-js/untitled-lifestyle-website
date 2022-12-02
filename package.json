@@ -15,7 +15,8 @@
     "docs": "doctoc --title '**Table of content**' README.md",
     "lint": "eslint --ext js,ts,tsx .",
     "test": "pnpm run -r test",
-    "reinstall": "clear; yarn clean:all; pnpm install; size node_modules/"
+    "reinstall": "clear; yarn clean:all; pnpm install; size node_modules/",
+    "serve:client": "cd apps/recipe-test.co; pnpm dev"
   },
   "devDependencies": {
     "@nighttrax/eslint-config-tsx": "~11.0.0",

@@ -1,0 +1,150 @@
+html {
+  background-color: #FBFBFB;
+  font-family: trebuchet, geneva, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+article, aside, footer, header {
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #333;
+  color: #ccc;
+  text-align: center;
+  border-bottom: 1px solid;
+}
+
+header a {
+  text-decoration: none;
+  color: #ccc;
+}
+
+header a:hover {
+  text-decoration: underline;
+  color: #ccc;
+}
+
+aside {
+  background-color: #b5b5b5;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+}
+
+/* default navigation values */
+nav {
+  display: flex;
+  background-color: black;
+  padding: 10px 0;
+}
+
+nav a {
+  flex: auto;
+  text-align: center;
+  background: #ccc;
+  color: black;
+  margin: 0 5px;
+  padding: 5px 0;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+nav a:hover {
+  outline: 1px solid red;
+  color: red;
+  text-decoration: underline;
+}
+
+aside span a {
+  background: rgba(198, 221, 223, 0.888);
+  color: black;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+aside span a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+aside span a,
+aside span a:hover {
+  text-decoration: none;
+}
+
+aside ul {
+  margin: 0;
+  padding: 0;
+}
+
+aside li {
+  list-style-type: none;  
+  margin-left: 20px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  width: auto;
+  /* display:  */
+}
+
+aside li a {
+  background: #ccc;
+  color: black;
+  padding: 5px;
+  border-radius: 3px;  
+}
+
+aside li a:link,
+aside li a:hover {
+  text-decoration: none;
+}
+
+aside li a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+aside li:first-child {
+  margin-top: 15px;
+}
+
+aside li:last-child {
+  margin-bottom: 15px;
+}
+
+/* larger screen */
+@media screen and (min-width: 30rem) {
+  body {
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+    margin: auto;
+  }
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    border-bottom: 0.5rem solid;
+    /* min-height: 100%; */
+    align-items: stretch;
+  }
+  nav, header {
+    order: -1;
+  }
+  article {
+    flex: 75%;
+  }
+  aside {
+    flex: 25%;
+  }
+}

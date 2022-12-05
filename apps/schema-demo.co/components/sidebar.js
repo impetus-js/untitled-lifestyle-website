@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { childUrl, topUrl } from '../utils/url'
-import { nestedRoutes } from '../utils/routes';
+import { nestedRoutes } from '../utils/config';
 import { useUrlRemapper } from '../utils/state'
 
 export default () => {

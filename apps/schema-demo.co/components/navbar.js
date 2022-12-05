@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link'
-import { routes } from '../utils/url'
+import { recipieRoutes } from '../utils/config'
 import { useAppContext } from '../utils/state'
 
 export default () => {
@@ -12,7 +12,7 @@ export default () => {
 
   return (
     <React.Fragment>
-      {routes.map(route =>
+      {recipieRoutes.map(route =>
         <Link href={`/recipes/${route.stub}`} key={route.stub} onClick={handleClick(route.stub)}>
           {route.name}
         </Link>)}

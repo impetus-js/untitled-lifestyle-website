@@ -1,3 +1,20 @@
+export const recipieRoutes = [{
+  name: 'Mushroom Risotto',
+  stub: 'mushroom-risotto',
+  icon: '',
+}, {
+  name: 'Pommes Paolo',
+  stub: 'pommes-paolo',
+  icon: '',
+}, {
+  name: 'Christmas Salmon',
+  stub: 'christmas-salmon',
+  icon: '',
+}, {
+  name: 'Caramel Mousse',
+  stub: 'caramel-mousse',
+}]
+
 export const nestedRoutes = [{
   text: 'Core Schema Functionality',
   base: 'core',
@@ -18,9 +35,7 @@ export const nestedRoutes = [{
     path: 'techniques',
     text: 'Techniques',
   }]
-},
-
-{
+}, {
   text: 'Calculated Values',
   base: 'calculated-values',
   desc: 'Any extra info that I may want on hover or something, who knows?',
@@ -89,6 +104,4 @@ export const nestedRoutes = [{
     text: 'Units',
     path: '',
   }]
-}
-
-]
+}]

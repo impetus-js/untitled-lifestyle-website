@@ -5,4 +5,3 @@ export default () => (
     Intro for Core Features
   </>
 )
-

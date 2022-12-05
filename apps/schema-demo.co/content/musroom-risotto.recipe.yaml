@@ -1,0 +1,24 @@
+---
+name: "@mrpotatoes/untitled-lifestyle-website"
+description: Template for setting up a TypeScript monorepo
+private: true
+workspaces:
+- packages/*
+- libs/*
+- services/*
+- apps/*
+scripts:
+  build: pnpm run -r build
+  clean:all: rm -rf node_modules; pnpm run -r clean
+  clean:install: clear; yarn clean:all; pnpm i
+  docs: doctoc --title '**Table of content**' README.md
+  lint: eslint --ext js,ts,tsx .
+  test: pnpm run -r test
+  reinstall: clear; yarn clean:all; pnpm install; size node_modules/
+  serve:demo: cd apps/schema-demo.co; pnpm dev
+devDependencies:
+  "@nighttrax/eslint-config-tsx": "~11.0.0"
+  doctoc: "~2.2.0"
+  eslint: "~8.28.0"
+  eslint-plugin-import: "~2.26.0"
+  typescript: "~4.9.0"

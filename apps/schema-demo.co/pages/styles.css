@@ -7,7 +7,10 @@ body {
   margin: 0;
 }
 
-article, aside, footer, header {
+article,
+aside,
+footer,
+header {
   padding: 0.5rem;
   box-sizing: border-box;
 }
@@ -89,7 +92,7 @@ aside ul {
 }
 
 aside li {
-  list-style-type: none;  
+  list-style-type: none;
   margin-left: 20px;
   margin-bottom: 15px;
   margin-top: 15px;
@@ -101,7 +104,7 @@ aside li a {
   background: #ccc;
   color: black;
   padding: 5px;
-  border-radius: 3px;  
+  border-radius: 3px;
 }
 
 aside li a:link,
@@ -130,6 +133,7 @@ aside li:last-child {
     padding: 2px;
     margin: auto;
   }
+
   main {
     display: flex;
     flex-wrap: wrap;
@@ -138,13 +142,28 @@ aside li:last-child {
     /* min-height: 100%; */
     align-items: stretch;
   }
-  nav, header {
+
+  nav,
+  header {
     order: -1;
   }
+
   article {
     flex: 75%;
   }
+
   aside {
     flex: 25%;
   }
+}
+
+
+.callout {
+  background-color: #D7ECFA;
+  color: #0A0A0A;
+  position: relative;
+  margin: 0 0 1rem;
+  padding: 1rem;
+  border: 1px solid hsla(0, 0%, 4%, .25);
+  border-radius: 0;
 }

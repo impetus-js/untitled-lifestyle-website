@@ -1,15 +1,21 @@
 import React from 'react';
 import Link from 'next/link'
+import { routes } from '../utils/url'
+import { useAppContext } from '../utils/state'
 
-export default () => (
-  <React.Fragment>
-    <Link href="/recipes/mushroom-risotto">Recipe 1</Link>
-    <Link href="/recipes/pommes-paolo">Recipe 2</Link>
-    <Link href="/recipes/christmas-salmon">Recipe 3</Link>
-    <Link href="/recipes/caramel-mousse">Recipe 4</Link>
-    <Link href="/recipes/snails">Recipe 5</Link>
-    <Link href="/recipes/wild-sea-bass">Recipe 6</Link>
-    <Link href="/recipes/thai-khanom">Recipe 7</Link>
-  </React.Fragment>
-)
+export default () => {
+  const { recipe } = useAppContext()
 
+  const handleClick = (key) => (e) => {
+    recipe.set(key)
+  };
+
+  return (
+    <React.Fragment>
+      {routes.map(route =>
+        <Link href={`/recipes/${route.stub}`} key={route.stub} onClick={handleClick(route.stub)}>
+          {route.name}
+        </Link>)}
+    </React.Fragment>
+  )
+}

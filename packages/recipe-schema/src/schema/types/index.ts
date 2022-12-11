@@ -75,3 +75,12 @@ export type formats = 'plain' | 'markdown' | 'html' | 'html' | 'rich' | 'csv'
 export type componentBehavior = 'merge' | 'append'
 
 export type instructionType = 'step' | 'tip' | 'section'
+
+export enum TextOrders {
+  LONG_SHORT_STUB,
+  LONG_STUB_SHORT,
+  SHORT_LONG_STUB,
+  SHORT_STUB_LONG,
+  STUB_LONG_SHORT,
+  STUB_SHORT_LONG,
+}

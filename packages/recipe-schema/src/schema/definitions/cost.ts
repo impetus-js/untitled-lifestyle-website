@@ -10,6 +10,8 @@ export interface cost {
 
   /**
    * The currency type to know how to render.
+   *
+   * @todo: Change this to have units
    */
   currency: number
 }

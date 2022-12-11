@@ -1,8 +1,10 @@
-export const TEXT = 'this is the module'
-// import { resolve, join } from 'path'
-// import * as fs from 'fs'
-// import * as yaml from 'js-yaml'
-// import * as TJS from 'typescript-json-schema'
+/**
+ * TODO: Move me to tests/live.ts
+ */
+import { resolve, join } from 'path'
+import * as fs from 'fs'
+import * as yaml from 'js-yaml'
+import * as TJS from 'typescript-json-schema'
 
 // // optionally pass argument to schema generator
 // const settings: TJS.PartialArgs = {

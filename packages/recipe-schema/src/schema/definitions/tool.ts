@@ -18,13 +18,15 @@ export interface tool {
 
   /**
    * Other names that this tool is known by.
-   * 
+   *
    * A link/text to show what this is the same as (string | SameAs)
    */
-  alternateNames: string[]
+  alternateNames?: string[]
 
   /**
    * The amount required for this activity
+   * 
+   * 
    */
   quantity: number
 
@@ -40,8 +42,10 @@ export interface tool {
 
   /**
    * Indicates a potential (ideal) action.
+   *
+   * @todo: is this required? What was the original intention?
    */
-  potentialAction: string
+  potentialAction?: string
 
   /**
    * A store URL
@@ -51,10 +55,10 @@ export interface tool {
   /**
    * A list of tutorial URLs to show the reader how to use this tool.
    */
-  tutorials: string[]
+  tutorials?: string[]
 
   /**
    * Consumables for the tool if it requires it.
    */
-  consumeables: string[]
+  consumeables?: string[]
 }

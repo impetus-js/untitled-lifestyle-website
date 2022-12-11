@@ -21,14 +21,14 @@ export interface person {
    * Any notable colleagues
    */
   colleagues?: person[]
-  
+
   /**
    * Person's contact info
    */
   contact?: {
     /**
      * Telephone. No format
-     * 
+     *
      * @pattern ^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$
      * @see https://ihateregex.io/expr/phone/
      */
@@ -36,12 +36,12 @@ export interface person {
 
     /**
      * Person's email
-     * 
+     *
      * @pattern [^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+
      */
     email?: string
   }
-  
+
   /**
    * Last known resturant they were employed/owned.
    */
@@ -50,22 +50,24 @@ export interface person {
      * Name of the resturant
      */
     name: string
-    
+
     /**
      * The person'a title at the resutrant (Owner, Head Chef, Wait Staff et al)
      */
     title: string
-    
+
     /**
-     * The address
+     * The address.
+     *
+     * TODO: One day this will be expanded upon.
      */
     address: string
-    
+
     /**
      * The owner's name if not this person.
      */
-    owner: string | 'unknown'
-    
+    owner?: string | 'unknown'
+
     /**
      * The establishment's website.
      */

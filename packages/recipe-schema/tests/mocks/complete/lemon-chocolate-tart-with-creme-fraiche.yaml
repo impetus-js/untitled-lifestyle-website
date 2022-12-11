@@ -1,0 +1,366 @@
+---
+# First recipe that I converted to this new format. This is version one. Will not do another yet until ready.
+# As of this writing this is 366 lines long. In JSON it's 426. I only mention because I feel like this is WAY easier to read
+# since JSON has so much extra stuff to care about.
+---
+version: 1.0.0
+type: recipe
+time:
+  cook: 20m
+  prep: 2h
+  active: 3h
+  inactive: 40m
+  # @CALC
+  # total?:
+
+meta:
+  nutrition: nutrition
+  suitableForDiets:
+    - diabetic
+    - halal
+  cookingMethod:
+    format: plain
+    text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum lacinia egestas. Nullam auctor tortor euismod turpis egestas pretium. Aliquam ullamcorper nulla diam, a fermentum velit vehicula non. Pellentesque egestas enim vitae pellentesque pulvinar. Nam placerat dictum mattis. Nunc non augue molestie, ullamcorper dui eu, interdum nunc. In ac aliquet sapien. Cras viverra luctus nisl, nec iaculis mauris laoreet sed. Etiam eu tortor nec mauris semper accumsan at at turpis.
+  category:
+    - Lorem
+    - Ipsum
+    - Dolor
+  tags:
+    - Lorem
+  cuisines:
+    - Lorem
+  reviews:
+    - text: This is the link text
+      url: https://thisisthelinks.link
+      desc:
+        - format: plain
+          text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum lacinia egestas. Nullam auctor tortor euismod turpis egestas pretium. Aliquam ullamcorper nulla diam, a fermentum velit vehicula non. Pellentesque egestas enim vitae pellentesque pulvinar. Nam placerat dictum mattis. Nunc non augue molestie, ullamcorper dui eu, interdum nunc. In ac aliquet sapien. Cras viverra luctus nisl, nec iaculis mauris laoreet sed. Etiam eu tortor nec mauris semper accumsan at at turpis.
+
+about:
+  name: Lemon chocolate tart with creme fraiche
+  author:
+    name: Curtis Stone
+    url: https://www.curtisstone.com/
+    headshot: https://www.curtisstone.com/sites/default/files/about/budding-chef.png
+    contact:
+      # telephone: 1-770-736-8031 x56442
+      email: contact@curtisstone.com
+    resturants:
+      - name: Maude™
+        title: Head Chef
+        # One day this will be expanded upon.
+        address: 9 Township Place, Town 00000, United States
+        url: resturant@resturant.eat
+  # originalAuthor: person
+
+  # alternates: Array<string | link>
+  headnotes: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum lacinia egestas. Nullam auctor tortor euismod turpis egestas pretium. Aliquam ullamcorper nulla diam, a fermentum velit vehicula non. Pellentesque egestas enim vitae pellentesque pulvinar. Nam placerat dictum mattis. Nunc non augue molestie, ullamcorper dui eu, interdum nunc. In ac aliquet sapien. Cras viverra luctus nisl, nec iaculis mauris laoreet sed. Etiam eu tortor nec mauris semper accumsan at at turpis.
+  notes:
+    format: plain
+    text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum lacinia egestas. Nullam auctor tortor euismod turpis egestas pretium. Aliquam ullamcorper nulla diam, a fermentum velit vehicula non. Pellentesque egestas enim vitae pellentesque pulvinar. Nam placerat dictum mattis. Nunc non augue molestie, ullamcorper dui eu, interdum nunc. In ac aliquet sapien. Cras viverra luctus nisl, nec iaculis mauris laoreet sed. Etiam eu tortor nec mauris semper accumsan at at turpis.
+    # length?: {
+    #   min: 10
+    #   max: 200
+    # }
+    # external: https://jsonplaceholder.typicode.com/posts/1
+
+  # created: string
+  # published: string
+  # separator: radix
+  # units:
+  #   measurements: unitType
+  #   currency: 'USD'
+
+  # images:
+  #   hero: image
+  #   gallery: image[]
+  # totalCost:
+  #   everything: cost
+  #   per?:
+  #     component: cost
+  # links: link[]
+
+ingredients:
+  - id: ad5305b7-6e18-4293-a74c-e3648d2eb29d
+    name: cups plain flour
+    amount:
+      measurement: 1 1/2
+      type: imperial
+      unit: cup
+
+  - id: ad5305b7-6e18-4293-a74c-e3648d2eb29d
+    name: salt
+    amount:
+      measurement: 1/4
+      type: imperial
+      unit: tsp
+
+  - id: ad5305b7-6e18-4293-a74c-e3648d2eb29d
+    name: caster sugar
+    amount:
+      measurement: 3
+      type: imperial
+      unit: tbsp
+
+  - id: ad5305b7-6e18-4293-a74c-e3648d2eb29d
+    name: unsalted chilled butter, chopped
+    amount:
+      measurement: 120
+      type: metric
+      unit: g
+
+  - id: ad5305b7-6e18-4293-a74c-e3648d2eb29d
+    name: chilled water
+    amount:
+      measurement: 2 1/2
+      type: imperial
+      unit: tbsp
+
+  - id: ad5305b7-6e18-4293-a74c-e3648d2eb29d
+    name: dark cooking chocolate (70% cocoa)
+    amount:
+      measurement: 75
+      type: metric
+      unit: g
+
+  - id: ad5305b7-6e18-4293-a74c-e3648d2eb29d
+    name: eggs
+    amount:
+      measurement: 4
+      type: eye
+      unit: LARGE
+
+  - id: ad5305b7-6e18-4293-a74c-e3648d2eb29d
+    name: egg yolks
+    amount:
+      measurement: 3
+      type: eye
+      unit: LARGE
+
+  - id: ad5305b7-6e18-4293-a74c-e3648d2eb29d
+    name: fresh lemon juice (about 6 lemons)
+    amount:
+      measurement: 1
+      type: imperial
+      unit: cup
+
+  - id: ad5305b7-6e18-4293-a74c-e3648d2eb29d
+    name: caster sugar
+    amount:
+      measurement: 1
+      type: imperial
+      unit: cup
+
+  - id: ad5305b7-6e18-4293-a74c-e3648d2eb29d
+    name: chilled unsalted butter, cut into small cubes
+    amount:
+      measurement: 140
+      type: metric
+      unit: g
+
+  - id: ad5305b7-6e18-4293-a74c-e3648d2eb29d
+    name: salt
+    amount:
+      measurement: 1/2
+      type: imperial
+      unit: tsp
+
+  - id: ad5305b7-6e18-4293-a74c-e3648d2eb29d
+    name: creme fraiche, to serve
+    amount:
+      measurement: 1 1/2
+      type: imperial
+      unit: cup
+
+# ---------------------------------------------
+# ONLY CALUCLUATED PROPERTIES FROM STEPS
+#     allConsumeables:
+#     tools:
+#     techniques:
+#     totalTime?: 10m
+# 
+# OPTIONALLY CALUCLUATED PROPERTIES FROM STEPS
+#     estimatedCost
+# ---------------------------------------------
+instructions: 
+  - type: step
+    estimatedCost:
+      value: 10
+      currency:  USD
+
+    # Step 1
+    step:
+      label: Combine dry ingredients
+      tip:
+        format: plain
+        text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum lacinia egestas. Nullam auctor tortor.
+      # ingredients: Optional, added to top-level automatically.
+      tools:
+        - name: whisk
+          type: hand tool
+          alternateNames:
+            - Cool tool
+            - Super cool tool
+          quantity: 1
+          description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          image:
+            name: a11y
+            description: a11y
+            published: 2013-11-21T00:00:00.000Z
+            url: https://www.webstaurantstore.com/oxo-11240800-good-grips-6-x-3-fish-egg-turner-spatula/29711240800.html
+            sizes: xl
+      techniques:
+        why:
+          format: plain
+          text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum lacinia egestas. Nullam auctor tortor euismod turpis egestas pretium. Aliquam ullamcorper nulla diam, a fermentum velit vehicula non. Pellentesque egestas enim vitae pellentesque pulvinar. Nam placerat dictum mattis. Nunc non augue molestie, ullamcorper dui eu, interdum nunc. In ac aliquet sapien. Cras viverra luctus nisl, nec iaculis mauris laoreet sed. Etiam eu tortor nec mauris semper accumsan at at turpis.
+        technique: 
+          format: plain
+          text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum lacinia egestas. Nullam auctor tortor euismod turpis egestas pretium. Aliquam ullamcorper nulla diam, a fermentum velit vehicula non. Pellentesque egestas enim vitae pellentesque pulvinar. Nam placerat dictum mattis. Nunc non augue molestie, ullamcorper dui eu, interdum nunc. In ac aliquet sapien. Cras viverra luctus nisl, nec iaculis mauris laoreet sed. Etiam eu tortor nec mauris semper accumsan at at turpis.
+      timing: 10m
+      images:
+        - name: a11y
+          description: a11y
+          published: 2013-11-21T00:00:00.000Z
+          url: https://www.webstaurantstore.com/oxo-11240800-good-grips-6-x-3-fish-egg-turner-spatula/29711240800.html
+          sizes: xl
+        - name: a11y
+          description: a11y
+          published: 2013-11-21T00:00:00.000Z
+          url: https://www.webstaurantstore.com/oxo-11240800-good-grips-6-x-3-fish-egg-turner-spatula/29711240800.html
+          sizes: xl
+      text:
+        short: Combine the flour, salt and sugar in a food processor and pulse until combined. Add the butter and pulse until fine crumbs form.
+        long:
+          format: plain
+          text: Combine the flour, salt and sugar in a food processor and pulse until combined. Add the butter and pulse until fine crumbs form.
+
+  # Step 2
+  - type: step
+    step:
+      label: Taper in water
+      timing: 10m
+      images:
+        - name: a11y
+          description: a11y
+          published: 2013-11-21T00:00:00.000Z
+          url: https://www.webstaurantstore.com/oxo-11240800-good-grips-6-x-3-fish-egg-turner-spatula/29711240800.html
+          sizes: xl
+        - name: a11y
+          description: a11y
+          published: 2013-11-21T00:00:00.000Z
+          url: https://www.webstaurantstore.com/oxo-11240800-good-grips-6-x-3-fish-egg-turner-spatula/29711240800.html
+          sizes: xl
+      text:
+        stub: Add the water and pulse until the dough forms a ball, but do not over-mix.
+        short: Add the water and pulse until the dough forms a ball, but do not over-mix.
+        long:
+          format: plain
+          text: Add the water and pulse until the dough forms a ball, but do not over-mix.
+        
+
+  # Step 3
+  - type: step
+    step:
+      label: Proof ball
+      timing: 10m
+      images:
+        - name: a11y
+          description: a11y
+          published: 2013-11-21T00:00:00.000Z
+          url: https://www.webstaurantstore.com/oxo-11240800-good-grips-6-x-3-fish-egg-turner-spatula/29711240800.html
+          sizes: xl
+        - name: a11y
+          description: a11y
+          published: 2013-11-21T00:00:00.000Z
+          url: https://www.webstaurantstore.com/oxo-11240800-good-grips-6-x-3-fish-egg-turner-spatula/29711240800.html
+          sizes: xl
+      text:
+        stub: Flatten ball, wrap in plastic and chill for 60 minutes or up to one day.
+        short: Flatten ball, wrap in plastic and chill for 60 minutes or up to one day.
+        long:
+          format: plain
+          text: Flatten ball, wrap in plastic and chill for 60 minutes or up to one day.
+
+  # Step 4
+  - type: step
+    step:
+      label: Preheat oven
+      text:
+        stub: Preheat oven to 190˚C (170˚C fan forced) and remove dough from fridge for about 10 minutes to soften.
+        short: Preheat oven to 190˚C (170˚C fan forced) and remove dough from fridge for about 10 minutes to soften.
+        long:
+          format: plain
+          text: Preheat oven to 190˚C (170˚C fan forced) and remove dough from fridge for about 10 minutes to soften.
+
+  # Step 5
+  - type: step
+    step:
+      label: Forming
+      text:
+        stub: Preheat oven to 190˚C (170˚C fan forced) and remove dough from fridge for about 10 minutes to soften.
+        short: Preheat oven to 190˚C (170˚C fan forced) and remove dough from fridge for about 10 minutes to soften.
+        long:
+          format: plain
+          text: Preheat oven to 190˚C (170˚C fan forced) and remove dough from fridge for about 10 minutes to soften.
+          
+  # Step 6
+  - type: step
+    step:
+      label: Rolling pin time!
+      text:
+        stub: Using a rolling pin, wrap the dough around the pin then transfer to the tart pan and unroll over the length of the pan.
+        short: Using a rolling pin, wrap the dough around the pin then transfer to the tart pan and unroll over the length of the pan.
+          
+  # Step 7
+  - type: step
+    step:
+      label: Press
+      text:
+        stub: Carefully press the dough into the sides of the pan
+        short: Carefully press the dough into the sides of the pan. Using the rolling pin, roll over the pan to trim off any excess dough. Place pan back in fridge for 10 minutes.
+          
+  # Step 8
+  - type: step
+    step:
+      label: Press
+      text:
+        short: 
+          format: markdown
+          text: Using a fork, prick the dough several times to prevent the dough from rising when it bakes. Place a sheet of baking paper over the pastry and weigh down with pie weights, uncooked rice or similar. Bake for 15 minutes. Remove the baking paper and weights and bake for an additional 15 minutes, or until crust is evenly light golden brown. Remove from oven and cool completely.
+        long: 
+          format: markdown
+          text: Using a fork, prick the dough several times to prevent the dough from rising when it bakes. Place a sheet of baking paper over the pastry and weigh down with pie weights, uncooked rice or similar. Bake for 15 minutes. Remove the baking paper and weights and bake for an additional 15 minutes, or until crust is evenly light golden brown. Remove from oven and cool completely.
+          
+  # Step 9
+  - type: step
+    step:
+      label: Press
+      text:
+        short: 
+          format: markdown
+          text: Melt chocolate and spread over the base of the pastry in a thin, even layer. Place in fridge to set chocolate whilst making the lemon curd.
+        long: 
+          format: markdown
+          text: Melt chocolate and spread over the base of the pastry in a thin, even layer. Place in fridge to set chocolate whilst making the lemon curd.
+          
+  # Step 10
+  - type: step
+    step:
+      label: Press
+      text:
+        short: 
+          format: markdown
+          text: To make the lemon curd, mix the eggs, yolks, lemon juice, sugar and butter in a large bowl. Place over a simmering water bath and whisk continuously for about 15 minutes, until mixture thickens and coats the back of a spoon. Remove from heat and mix in salt. Cool for about 10 minutes.
+        long: 
+          format: markdown
+          text: To make the lemon curd, mix the eggs, yolks, lemon juice, sugar and butter in a large bowl. Place over a simmering water bath and whisk continuously for about 15 minutes, until mixture thickens and coats the back of a spoon. Remove from heat and mix in salt. Cool for about 10 minutes.
+          
+  # Step 11
+  - type: step
+    step:
+      label: Press
+      text:
+        long: 
+          format: markdown
+          text: Pour lemon curd over chocolate and chill in fridge for at least 4 hours. Before serving, bring to room temperature and use a warm dry knife to cut cleanly through the chocolate and crust. Serve with a dollop of crème fraiche.
+          

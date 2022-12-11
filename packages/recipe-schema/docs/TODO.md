@@ -14,7 +14,7 @@ How should measurments be captured?
 - [ ] Blog layouts & variations in `Bulma.io`
 - [ ] Regular page layouts in `Bulma.io`
 - [ ] Define schemas in code
-  - [ ] Define the `recipe` schema 
+  - [ ] Define the `recipe` schema
   - [ ] Define the `menu` schema (needs to use recipe)
   - [ ] Define the `food-lab` schema
   - [ ] Define the `dinner-party` schema
@@ -30,3 +30,15 @@ How should measurments be captured?
   - [ ] `food-lab-schema`
   - [ ] `flavor-schema`
   - [ ] `nutrition-schema` (or API)
+
+
+Gotta fix up the "About" schema. It isn't as good as I'd like.
+```
+About
+  resutrant -> array
+  add socials
+
+
+```
+
+Make sure to add reference properties. Sometimes you just want to reference outside sources. Super useful for autocomplete tools too. Need to think about what the response would need to look like.

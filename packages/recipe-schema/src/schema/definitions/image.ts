@@ -10,34 +10,39 @@ export interface image {
    * The name of the image. Used for captions, alt, aria.
    */
   name: string
-  
+
   /**
    * A description of the image. Used for captions, alt, aria.
    */
   description: description
-  
+
   /**
    * A publish date
-   * 
+   *
    * @format date
+   * @todo: Is this really nessessary?
    */
-  published: string
-  
+  published?: string
+
   /**
    * A url to the FULL SIZED IMAGE
    */
   url: string
-  
+
   /**
    * Address, basically text
+   *
+   * @TODO: Is this really nessessary?
    */
-  location: string
-  
+  location?: string
+
   /**
    * Author name
+   *
+   * @TODO: Is this really nessessary?
    */
-  author: person
-  
+  author?: person
+
   /**
    * If required, an array of image sizes can be supplied. These tell the consuming app
    * which sizes exist for the app to use. If this is excluded it is expected that the

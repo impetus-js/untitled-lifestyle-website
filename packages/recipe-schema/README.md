@@ -25,3 +25,4 @@ I'm back at it, finally.
 ----
 ### Footnotes
 [^rendering]: Clearly this will be for myself since I don't believe anyone will care about this schema, not really.
+

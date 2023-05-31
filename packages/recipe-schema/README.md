@@ -1,3 +1,10 @@
+```
+https://www.npmjs.com/package/jsoneditor
+
+https://github.com/json-editor/json-editor
+  https://json-editor.github.io/json-editor/?
+  Supports JSON Schema -> https://json-schema.org/implementations.html#from-code
+```
 ---
 ## Note
 While no one actually is looking at this schema so I'm really writing this for myself; I plan to start work on this again but slowly. One major change will be that I plan to change this from a `Recipe Schema` to an `Instructions/Directions Schema`. The schema that I was hyper-lazily putting together was incredibly verbose so that there was the flexibility to render an extremely detailed recipe or bare bones (more of what would be done in an actual resturant).
